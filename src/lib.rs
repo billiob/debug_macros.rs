@@ -13,7 +13,7 @@ macro_rules! dbg {
     ($format:expr, $($tail:expr),*) => {
         if cfg!(debug_assertions) {
             println!(concat!("{}:{}:{} ",$format),
-                    cfg!(crate_name), file!(), line!(), $($tail),*);
+                    module_path!(), file!(), line!(), $($tail),*);
         }
     };
 }
